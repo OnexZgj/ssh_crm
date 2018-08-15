@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<!-- 	# struts.objectFactory = spring  将Action的创建交给spring容器进行管理
+		      struts.objectFactory.spring.autoWire = name   spring负责action的依赖属性 action中需要的service,则自动注入  默认已经打开-->  
+
+	<constant name="struts.objectFactory" value="spring"></constant>
+
+	<package name="crm" namespace="/" extends="struts-default">
+	
+		<action name="UserAction_*" class="userAction" method="{1}">
+		<result name="success">/success.jsp</result>
+		</action>
+	</package>
+		
+</struts>
+	
